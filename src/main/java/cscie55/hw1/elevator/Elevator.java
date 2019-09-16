@@ -36,10 +36,12 @@ public class Elevator{
 
     public void resetNumberOfPassengers(int passengersWhoLeftElevator, boolean goingUp){
         if(goingUp){
+            //This maybe reset from where the passenger joined not from the beginning
             for(int i = 1; i < getCurrentFloor(); i++){
                 this.numberOfPassengersInAFloor[i] -= passengersWhoLeftElevator;
             }
         } else {
+            //This maybe reset from where the passenger joined not from the end
             for(int l = NUMBEROFFLOORS - 1; l > getCurrentFloor(); l--){
                 this.numberOfPassengersInAFloor[l] -= passengersWhoLeftElevator;
             }

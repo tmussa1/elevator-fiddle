@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a3eb551d-b6bf-47e2-b016-83a6da437f99" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/cscie55/hw1/elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cscie55/hw1/elevator/Elevator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cscie55/hw1/elevator/ElevatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cscie55/hw1/elevator/ElevatorTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="Elevator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cscie55/hw1/elevator/Elevator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+            <state relative-caret-position="300">
+              <caret line="69" column="65" lean-forward="true" selection-start-line="69" selection-start-column="65" selection-end-line="69" selection-end-column="65" />
               <folding>
                 <element signature="e#2800#2801#0" expanded="true" />
                 <element signature="e#2835#2836#0" expanded="true" />
@@ -244,15 +243,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568593931240</updated>
-      <workItem from="1568593935463" duration="9189000" />
+      <workItem from="1568593935463" duration="10017000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9189000" />
+    <option name="totallyTimeSpent" value="10017000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -307,8 +307,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cscie55/hw1/elevator/Elevator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+        <state relative-caret-position="300">
+          <caret line="69" column="65" lean-forward="true" selection-start-line="69" selection-start-column="65" selection-end-line="69" selection-end-column="65" />
           <folding>
             <element signature="e#2800#2801#0" expanded="true" />
             <element signature="e#2835#2836#0" expanded="true" />
