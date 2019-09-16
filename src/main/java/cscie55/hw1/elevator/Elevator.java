@@ -74,6 +74,8 @@ public class Elevator{
 
     public static void main(String [] args){
 
+        //For testing only, main will be removed
+
         Elevator elevator = new Elevator();
         elevator.boardPassenger(3);
         elevator.boardPassenger(3);
