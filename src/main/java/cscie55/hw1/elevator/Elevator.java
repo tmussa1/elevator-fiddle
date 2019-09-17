@@ -1,45 +1,73 @@
 public class Elevator{
 
     private static final int NUMBEROFFLOORS=7;
-    private int currentFloor = 0;
-    private boolean goingUp = true;
-    private int floorCount = 1;
-    private int[] numberOfPassengersInAFloor = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
+    private int currentFloor;
+    private boolean goingUp;
+    private int floorCount;
+    private int[] numberOfPassengersInAFloor;
+
+    public Elevator() {
+        this.currentFloor = 0;
+        this.goingUp = true;
+        this.numberOfPassengersInAFloor = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
+        this.floorCount = 1;
+    }
 
     public void move(){
 
-        //This will change up the direction of movement
-        if(floorCount % 14 <= 7){
+        /*
+        This will change up the direction of movement
+         */
+        if(floorCount % 14 <= NUMBEROFFLOORS){
             setGoingUp(true);
-        } else if(floorCount % 14 > 7){
+        } else if(floorCount % 14 > NUMBEROFFLOORS){
             setGoingUp(false);
         }
 
         int passengersWhoLeftElevator;
 
         if(isGoingUp()){
-            //Sets the current floor
-            int floorGoingUp = floorCount % 8;
+            /*
+            Sets the current floor
+             */
+            int floorGoingUp = floorCount % (NUMBEROFFLOORS + 1);
             setCurrentFloor(floorGoingUp);
 
-            //Calculates the number of passengers who left elevator at any given time
+            /*
+            Calculates the number of passengers who left elevator at any given time
+             */
             passengersWhoLeftElevator = -(this.numberOfPassengersInAFloor[getCurrentFloor()] -
                     this.numberOfPassengersInAFloor[getCurrentFloor() - 1]);
 
-            //When a passenger has left elevator, he is unoccupying the floors he was in before
+            /*
+            When a passenger has left elevator, he is unoccupying the floors he was in before
+             */
             resetNumberOfPassengers(passengersWhoLeftElevator, isGoingUp());
         }
         else {
-            //Sets the current floor
-            int floorGoingDown = 7 - (floorCount % 7);
+            /*
+            Sets the current floor
+             */
+            int floorGoingDown = NUMBEROFFLOORS - (floorCount % NUMBEROFFLOORS);
             setCurrentFloor(floorGoingDown);
 
-            //Calculates the number of passengers who left elevator at any given time
+            /*
+            Calculates the number of passengers who left elevator at any given time
+             */
             passengersWhoLeftElevator = -(this.numberOfPassengersInAFloor[getCurrentFloor()] -
                     this.numberOfPassengersInAFloor[getCurrentFloor() + 1]);
 
-            //When a passenger has left elevator, he is unoccupying the floors he was in before
+            /*
+            When a passenger has left elevator, he is unoccupying the floors he was in before
+             */
             resetNumberOfPassengers(passengersWhoLeftElevator, isGoingUp());
+        }
+
+        /*
+        Empty elevator when it reaches full cycle
+         */
+        if(this.floorCount % 14 == 0){
+            emptyElevator();
         }
 
         this.floorCount++;
@@ -48,7 +76,9 @@ public class Elevator{
 
     }
 
-    //Method for unoccupying a floor previously occupied by a passenger
+    /*
+    Method for unoccupying a floor previously occupied by a passenger
+     */
     private void resetNumberOfPassengers(int passengersWhoLeftElevator, boolean goingUp){
         if(goingUp){
             for(int i = 1; i < getCurrentFloor(); i++){
@@ -61,7 +91,9 @@ public class Elevator{
         }
     }
 
-    //Increase the number of passengers by a given number upto destination
+    /*
+    Increase the number of passengers by a given number upto destination
+     */
     public void boardPassenger(int destinationFloor){
         if(isGoingUp()){
             incrementPassengersGoingUp(destinationFloor);
@@ -71,7 +103,9 @@ public class Elevator{
         }
     }
 
-    //Incrementing passengers going up to their destination
+    /*
+    Incrementing passengers going up to their destination
+     */
     private void incrementPassengersGoingUp(int destinationFloor){
         int floorsToGoUp = getCurrentFloor();
 
@@ -81,13 +115,24 @@ public class Elevator{
         }
     }
 
-    //Incrementing passengers going down to their destination
+    /*
+    Incrementing passengers going down to their destination
+     */
     private void incrementPassengersGoingDown(int destinationFloor){
         int floorsToGoDown = getCurrentFloor();
 
         while(floorsToGoDown > destinationFloor){
             this.numberOfPassengersInAFloor[floorsToGoDown] += 1;
             floorsToGoDown--;
+        }
+    }
+
+    /*
+    Empty the elevator when completing one cycle
+     */
+    public void emptyElevator(){
+        for(int i = 0; i < NUMBEROFFLOORS; i++){
+           this.numberOfPassengersInAFloor[i] = 0;
         }
     }
 
