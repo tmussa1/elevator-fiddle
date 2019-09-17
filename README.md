@@ -11,6 +11,8 @@ Submitted to: Fred Evers
 Homework 1: Elevator Simulation 1**
 
 
+
+
 move() : void - moves the elevator
 
 resetNumberOfPassengers(int, boolean) : void - unoccupies passengers
